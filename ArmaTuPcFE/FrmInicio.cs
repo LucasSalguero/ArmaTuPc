@@ -12,6 +12,7 @@ namespace ArmaTuPcFE
 {
     public partial class FrmInicio : Form
     {
+        private PCsArmada Productos = new PCsArmada();
         private List<Procesador> procesadores;
         private List<Componentes> placamadre;
         private List<Componentes> memoria;
@@ -26,6 +27,7 @@ namespace ArmaTuPcFE
             InitializeComponent();
             gestorcomponentes = new GestorComponentes();
             CargarComponentes();
+            dgvPC.DataSource = Productos.ListaPC;
         }
 
         private void CargarComponentes()
@@ -127,6 +129,58 @@ namespace ArmaTuPcFE
             cboFuente.SelectedIndex = -1;
             cboGabinete.SelectedIndex = -1;
             cboPlaca.SelectedIndex = -1;
+        }
+
+        private void bttAgregar_Click(object sender, EventArgs e)
+        {
+            PC pcArmada = new PC
+            {
+                Procesador = (Componentes)cboModelo.SelectedItem,
+                PlacaMadre = (Componentes)cboPlaca.SelectedItem,
+                RAM = (Componentes)cboMemoria.SelectedItem,
+                Almacenamiento = (Componentes)cboAlmacenamiento.SelectedItem,
+                GPU = (Componentes)cboGpu.SelectedItem,
+                FuentePoder = (Componentes)cboFuente.SelectedItem,
+                Gabinete = (Componentes)cboGabinete.SelectedItem
+            };
+            // Insertar la PC armada en la lista
+            Productos.Insert(pcArmada);
+            dgvPC.DataSource = null;
+            dgvPC.DataSource = Productos.ListaPC;
+            MessageBox.Show("PC armada agregada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // limpiar combobox
+            cboModelo.SelectedIndex = -1;
+            cboMemoria.SelectedIndex = -1;
+            cboAlmacenamiento.SelectedIndex = -1;
+            cboGpu.SelectedIndex = -1;
+            cboFuente.SelectedIndex = -1;
+            cboGabinete.SelectedIndex = -1;
+            cboPlaca.SelectedIndex = -1;
+        }
+
+        private void bttEliminar_Click(object sender, EventArgs e)
+        {
+            if (dgvPC.CurrentRow != null && dgvPC.CurrentRow.Index >= 0)
+            {
+                int indiceFila = dgvPC.CurrentRow.Index;
+
+                if (!dgvPC.Rows[indiceFila].IsNewRow)
+                {
+                    Productos.ListaPC.Rows.RemoveAt(indiceFila);
+                    Productos.ListaPC.WriteXml("PcsArmada.xml");
+                    dgvPC.Refresh();
+                    MessageBox.Show("Producto eliminado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, selecciona una fila para eliminar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona una fila para eliminar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 

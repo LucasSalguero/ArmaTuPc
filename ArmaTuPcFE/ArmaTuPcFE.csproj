@@ -54,6 +54,7 @@
       <DependentUpon>FrmInicio.cs</DependentUpon>
     </Compile>
     <Compile Include="GestorComponentes.cs" />
+    <Compile Include="PCs.cs" />
     <Compile Include="Procesador.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -39,21 +39,23 @@
             this.cboMemoria = new System.Windows.Forms.ComboBox();
             this.cboAlmacenamiento = new System.Windows.Forms.ComboBox();
             this.cboGpu = new System.Windows.Forms.ComboBox();
-            this.btnConfirmar = new System.Windows.Forms.Button();
             this.cboModelo = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.cboFuente = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.cboGabinete = new System.Windows.Forms.ComboBox();
-            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.dgvPC = new System.Windows.Forms.DataGridView();
+            this.bttAgregar = new System.Windows.Forms.Button();
+            this.bttEliminar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPC)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(292, 21);
+            this.label1.Location = new System.Drawing.Point(32, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(124, 26);
             this.label1.TabIndex = 0;
@@ -62,7 +64,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(34, 83);
+            this.label2.Location = new System.Drawing.Point(34, 48);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(103, 13);
             this.label2.TabIndex = 1;
@@ -71,7 +73,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(34, 163);
+            this.label3.Location = new System.Drawing.Point(390, 48);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 13);
             this.label3.TabIndex = 2;
@@ -80,7 +82,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(34, 203);
+            this.label4.Location = new System.Drawing.Point(564, 48);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(77, 13);
             this.label4.TabIndex = 3;
@@ -89,7 +91,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(34, 243);
+            this.label5.Location = new System.Drawing.Point(35, 99);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(88, 13);
             this.label5.TabIndex = 4;
@@ -98,7 +100,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(34, 286);
+            this.label6.Location = new System.Drawing.Point(216, 99);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(81, 13);
             this.label6.TabIndex = 5;
@@ -111,7 +113,7 @@
             this.cboTipo.Items.AddRange(new object[] {
             "AMD",
             "INTEL"});
-            this.cboTipo.Location = new System.Drawing.Point(37, 99);
+            this.cboTipo.Location = new System.Drawing.Point(37, 64);
             this.cboTipo.Name = "cboTipo";
             this.cboTipo.Size = new System.Drawing.Size(165, 21);
             this.cboTipo.TabIndex = 6;
@@ -120,7 +122,7 @@
             // cboPlaca
             // 
             this.cboPlaca.FormattingEnabled = true;
-            this.cboPlaca.Location = new System.Drawing.Point(37, 179);
+            this.cboPlaca.Location = new System.Drawing.Point(393, 64);
             this.cboPlaca.Name = "cboPlaca";
             this.cboPlaca.Size = new System.Drawing.Size(165, 21);
             this.cboPlaca.TabIndex = 7;
@@ -128,7 +130,7 @@
             // cboMemoria
             // 
             this.cboMemoria.FormattingEnabled = true;
-            this.cboMemoria.Location = new System.Drawing.Point(37, 219);
+            this.cboMemoria.Location = new System.Drawing.Point(567, 64);
             this.cboMemoria.Name = "cboMemoria";
             this.cboMemoria.Size = new System.Drawing.Size(165, 21);
             this.cboMemoria.TabIndex = 8;
@@ -136,7 +138,7 @@
             // cboAlmacenamiento
             // 
             this.cboAlmacenamiento.FormattingEnabled = true;
-            this.cboAlmacenamiento.Location = new System.Drawing.Point(37, 259);
+            this.cboAlmacenamiento.Location = new System.Drawing.Point(37, 115);
             this.cboAlmacenamiento.Name = "cboAlmacenamiento";
             this.cboAlmacenamiento.Size = new System.Drawing.Size(165, 21);
             this.cboAlmacenamiento.TabIndex = 9;
@@ -144,25 +146,15 @@
             // cboGpu
             // 
             this.cboGpu.FormattingEnabled = true;
-            this.cboGpu.Location = new System.Drawing.Point(37, 302);
+            this.cboGpu.Location = new System.Drawing.Point(219, 115);
             this.cboGpu.Name = "cboGpu";
             this.cboGpu.Size = new System.Drawing.Size(165, 21);
             this.cboGpu.TabIndex = 10;
             // 
-            // btnConfirmar
-            // 
-            this.btnConfirmar.Location = new System.Drawing.Point(297, 382);
-            this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(133, 31);
-            this.btnConfirmar.TabIndex = 11;
-            this.btnConfirmar.Text = "CONFIRMAR PEDIDO";
-            this.btnConfirmar.UseVisualStyleBackColor = true;
-            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
-            // 
             // cboModelo
             // 
             this.cboModelo.FormattingEnabled = true;
-            this.cboModelo.Location = new System.Drawing.Point(37, 139);
+            this.cboModelo.Location = new System.Drawing.Point(219, 64);
             this.cboModelo.Name = "cboModelo";
             this.cboModelo.Size = new System.Drawing.Size(165, 21);
             this.cboModelo.TabIndex = 12;
@@ -170,7 +162,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(34, 123);
+            this.label7.Location = new System.Drawing.Point(216, 48);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(116, 13);
             this.label7.TabIndex = 13;
@@ -179,7 +171,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(34, 326);
+            this.label8.Location = new System.Drawing.Point(390, 99);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(89, 13);
             this.label8.TabIndex = 14;
@@ -188,7 +180,7 @@
             // cboFuente
             // 
             this.cboFuente.FormattingEnabled = true;
-            this.cboFuente.Location = new System.Drawing.Point(37, 342);
+            this.cboFuente.Location = new System.Drawing.Point(393, 115);
             this.cboFuente.Name = "cboFuente";
             this.cboFuente.Size = new System.Drawing.Size(165, 21);
             this.cboFuente.TabIndex = 15;
@@ -196,7 +188,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(34, 366);
+            this.label9.Location = new System.Drawing.Point(564, 99);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(53, 13);
             this.label9.TabIndex = 16;
@@ -205,34 +197,53 @@
             // cboGabinete
             // 
             this.cboGabinete.FormattingEnabled = true;
-            this.cboGabinete.Location = new System.Drawing.Point(37, 382);
+            this.cboGabinete.Location = new System.Drawing.Point(567, 115);
             this.cboGabinete.Name = "cboGabinete";
             this.cboGabinete.Size = new System.Drawing.Size(165, 21);
             this.cboGabinete.TabIndex = 17;
             // 
-            // btnLimpiar
+            // dgvPC
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(297, 332);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(128, 31);
-            this.btnLimpiar.TabIndex = 18;
-            this.btnLimpiar.Text = "LIMPIAR";
-            this.btnLimpiar.UseVisualStyleBackColor = true;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            this.dgvPC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPC.Location = new System.Drawing.Point(12, 266);
+            this.dgvPC.Name = "dgvPC";
+            this.dgvPC.Size = new System.Drawing.Size(786, 150);
+            this.dgvPC.TabIndex = 19;
+            // 
+            // bttAgregar
+            // 
+            this.bttAgregar.Location = new System.Drawing.Point(141, 183);
+            this.bttAgregar.Name = "bttAgregar";
+            this.bttAgregar.Size = new System.Drawing.Size(156, 35);
+            this.bttAgregar.TabIndex = 20;
+            this.bttAgregar.Text = "AGREGAR";
+            this.bttAgregar.UseVisualStyleBackColor = true;
+            this.bttAgregar.Click += new System.EventHandler(this.bttAgregar_Click);
+            // 
+            // bttEliminar
+            // 
+            this.bttEliminar.Location = new System.Drawing.Point(461, 183);
+            this.bttEliminar.Name = "bttEliminar";
+            this.bttEliminar.Size = new System.Drawing.Size(156, 35);
+            this.bttEliminar.TabIndex = 21;
+            this.bttEliminar.Text = "ELIMINAR";
+            this.bttEliminar.UseVisualStyleBackColor = true;
+            this.bttEliminar.Click += new System.EventHandler(this.bttEliminar_Click);
             // 
             // FrmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnLimpiar);
+            this.Controls.Add(this.bttEliminar);
+            this.Controls.Add(this.bttAgregar);
+            this.Controls.Add(this.dgvPC);
             this.Controls.Add(this.cboGabinete);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.cboFuente);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.cboModelo);
-            this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.cboGpu);
             this.Controls.Add(this.cboAlmacenamiento);
             this.Controls.Add(this.cboMemoria);
@@ -246,6 +257,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmInicio";
             this.Text = "Inicio";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPC)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -264,14 +276,15 @@
         private System.Windows.Forms.ComboBox cboMemoria;
         private System.Windows.Forms.ComboBox cboAlmacenamiento;
         private System.Windows.Forms.ComboBox cboGpu;
-        private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.ComboBox cboModelo;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cboFuente;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cboGabinete;
-        private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.DataGridView dgvPC;
+        private System.Windows.Forms.Button bttAgregar;
+        private System.Windows.Forms.Button bttEliminar;
     }
 }
 
